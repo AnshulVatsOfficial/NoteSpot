@@ -1,0 +1,1068 @@
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*Global CSS*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --btn-bg-color: #e2e5fe;
+    --btn-fg-color: #4b61f8;
+    --heading-color: #2d405f;
+    --logo-color: #2d405f;
+    --nav-bg-color: #f6f7ff;
+    --font-color: #444444;
+    --h1-size: 3rem;
+    --h2-size: 1.90rem;
+    --h3-size: 1rem;
+    --text-size: 0.75rem;
+    --text-color: black;
+    --section-bg-color: #466393;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    width: 0.7rem;
+    background-color: rgb(231, 231, 231);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #3b4ef8;
+    transition: 0.3s;
+    height: 75px;
+}
+
+/*Website Loading animation*/
+.loading-content{
+    display: none;
+}
+
+#css-loader{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #3b4ef8;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+}
+
+/*Main Body Starts*/
+
+body{
+    font-family: "Poppins", sans-serif;
+}
+
+h1{
+    font-weight: bold !important;
+    font-size: var(--h1-size) !important;
+    color: var(--heading-color);
+}
+
+p{
+    font-weight: 400;
+    font-size: 1.25rem !important;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Krub", sans-serif;
+}
+
+a{
+    color: #3b4ef8;
+    text-decoration: none !important;
+}
+  
+a:hover{
+    color: #6c7afa !important;
+}
+
+/*Custom CSS*/
+
+.my_navbar{
+    position: fixed;
+    background-color: var(--nav-bg-color);
+    border-bottom: 2px solid #eceefe;
+    z-index: 1000;
+    -webkit-transition: all 0.3s ease-out !important;
+    transition: all 0.3s ease-out;
+}
+
+.my_navbar.on-scroll{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0.125rem 1.75rem 0 rgba(0,0,0,0.2);
+    transition: all 0.1s ease-in-out 0s;
+}
+
+#nav-toggler-btn{
+    border: none !important;
+}
+
+.nav_container{
+    position: relative;
+}
+
+.my_navbar .my_logo{
+    margin-left: 50px;
+    font-size: 2.25rem;
+    color: var(--logo-color) !important;
+    font-weight: bold;
+}
+
+.my_navbar .my_logo:hover{
+    color: var(--logo-color) !important;
+}
+
+.my_navbar .pos_right{
+    position: relative !important;
+    left: auto !important;
+}
+
+.pos_right li{
+    margin: 0px 20px !important;
+}
+
+.my_navbar ul li a{
+    font-size: var(--h3-size);
+    font-weight: bold;
+}
+
+#upload-notes-btn,
+#download-notes-btn,
+#convert-img-btn{
+    display: none;
+    margin-right: 0px;
+}
+
+#upload-notes-btn,
+#upload-notes-btn:focus{
+    background: #e2e5fe;
+    padding: 9px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#upload-notes-btn:hover,
+#upload-notes-btn:focus:hover,
+#download-notes-btn:hover,
+#download-notes-btn:focus:hover,
+#convert-img-btn:hover,
+#convert-img-btn:focus:hover{
+    color: white !important;
+    background: #3b4ef8;
+    box-shadow: 0px 15px 20px rgba(59,78,248, 0.4);
+}
+
+.get-started-btn{
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+.get-started-btn,
+.get-started-btn:focus{
+    background: #e2e5fe;
+    padding: 9px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.get-started-btn:hover,
+.get-started-btn:focus:hover{
+    color: white !important;
+    background: #3b4ef8;
+    box-shadow: 0px 15px 20px rgba(59,78,248, 0.4);
+}
+/*Home Section CSS*/
+
+.home-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    align-items: center !important;
+    padding-top: 70px !important;
+}
+
+.home-items h1,
+.home-items p{
+    text-align: center;
+}
+
+.home-items .home-btn{
+    margin-right: 0;
+    padding: 12px 36px;
+}
+
+.download-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.convert-image-div{
+    flex-direction: column;
+}
+
+.convert-image-div p{
+    text-align: center;
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.convert-image-div p,
+.convert-image-div a{
+    display: none;
+}
+
+.home-banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-banner img{
+    max-width: 60% !important;
+}
+
+/*About section CSS*/
+
+.about-section{
+    background-color: var(--section-bg-color);
+}
+
+.about-left h2{
+    color: white;
+    font-weight: bold;
+    font-size: var(--h2-size) !important;
+    line-height: 2rem;
+}
+
+.about-left p{
+    font-size: 1rem !important;
+    color: white;
+}
+
+.about-left a,
+.about-left a:focus{
+    color: white !important;
+    padding: 8px 30px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.about-left a:hover,
+.about-left a:focus:hover{
+    color: white;
+}
+
+.about-right i{
+    font-size: 30px;
+    color: white;
+}
+
+.about-right h3{
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem !important;
+}
+
+.about-right p{
+    font-size: 1rem !important;
+    color: white;
+}
+
+.about-right-one,
+.about-right-two{
+    display: flex !important;
+}
+
+.right-div{
+    padding-left: 10px;
+}
+
+/*Client section CSS*/
+#client{
+    background-color: #f6f8fb !important;
+}
+
+.clients{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.clients h5{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: poppins;
+    color: #3b4ef8;
+}
+
+.clients p{
+    font-size: 16px;
+    font-family: poppins;
+    font-weight: 600;
+    color: #2d405f;
+}
+
+.client{
+    display: inline-block !important;
+    max-width: 45% !important;
+    padding: 15px 0px !important;
+}
+
+/*Features section CSS*/
+
+.feature-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-title h2{
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.feature-title p{
+    font-size: 1rem !important;
+    text-align: center;
+}
+
+.f-common h2{
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.f-text1 p{
+    font-size: 1rem !important;
+}
+
+/*Steps section CSS*/
+
+/* .border-rht{
+    border-right: 1px solid #aaaaaa;
+}
+
+.border-btm{
+    border-bottom: 1px solid #aaaaaa;
+} */
+
+.s-common span,
+.s-common h3,
+.s-common p{
+    margin-left: 20px;
+}
+
+.s-common span{
+    font-size: 1.5rem !important;
+    /* font-weight: bold; */
+    color: #3b4ef8;
+}
+
+.s-common p{
+    font-size: 1.1rem !important;
+    color: #aaaaaa !important;
+}
+
+/*Services section CSS*/
+
+.services-section{
+    background-color: #2d405f;
+}
+
+.services-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-title h2{
+    font-weight: bold;
+    color: white;
+}
+
+.services-title p{
+    font-size: 1rem !important;
+    text-align: center;
+    color: white;
+}
+
+.services-cards{
+    justify-content: center !important;
+}
+
+.card-common{
+    border: none !important;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.card-common:hover{
+    transform: scale(1.075);
+}
+
+.card-common, .common-body{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.card-common i{
+    font-size: 32px;
+    color: rgb(45, 64, 95);
+    padding: 20px;
+}
+
+.my-cards{
+    display: flex;
+    align-items: center;
+}
+
+.common-body a,
+.common-body a:focus,
+.common-body a:hover{
+    font-size: 1.2rem;
+    color: var(--heading-color) !important;
+    font-weight: bold;
+}
+
+.common-body p{
+    text-align: center !important;
+    font-size: 1.10rem !important;
+}
+
+/*Team section CSS*/
+
+.team-card-cont{
+    justify-content: center !important;
+}
+
+.team-cards img{
+    border-radius: 5px !important;
+}
+
+.team-common h3{
+    text-align: center;
+    position: relative;
+    bottom: 22px;
+    z-index: -1;
+    font-size: 1.20rem;
+    font-weight: bold;
+    color: var(--heading-color);
+    transition: 0.4s ease-in-out;
+}
+
+.team-cards{
+    transition: 0.4s ease-in-out;
+}
+
+.team-cards:hover{
+    transform: translateY(-25px);
+}
+
+.team-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-title h2{
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.team-title p{
+    font-size: 1rem !important;
+    text-align: center;
+    color: var(--heading-color);
+}
+
+.team-cards{
+    border: none !important;
+}
+
+/*Pricing section CSS*/
+
+.pricing-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing-title h2{
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.pricing-title p{
+    font-size: 1rem !important;
+    text-align: center;
+    color: var(--heading-color);
+}
+
+.pricing-section{
+    background-color: #f6f8fb !important;
+}
+
+.pricing-cards{
+    border: none !important;
+    transition: 0.4s;
+}
+
+.pricing-cards:hover{
+    transform: translateY(-15px) !important;
+    border-bottom: 3px solid var(--heading-color) !important;
+}
+
+.common-body h3{
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.common-body .price-tag{
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.common-body .time-duration{
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.common-body .price-btn,
+.common-body .price-btn:focus{
+    margin: 0px;
+    color: var(--btn-fg-color) !important;
+    font-weight: bold;
+    padding: 8px 30px !important;
+    font-size: 1rem !important;
+}
+
+.common-body .price-btn:hover,
+.common-body .price-btn:focus:hover{
+    color: white !important;
+    font-weight: bold;
+}
+
+.second-card-body{
+    color: white !important;
+    background-color: var(--heading-color);
+}
+
+/*FAQ section CSS*/
+
+.faq-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-title h2{
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.faq-title p{
+    font-size: 1rem !important;
+    text-align: center;
+    color: var(--heading-color);
+}
+
+.ques-icon{
+    cursor: pointer;
+}
+
+.faq-section .ques{
+    color: var(--btn-fg-color);
+    cursor: pointer;
+}
+
+.faq-section .ans{
+    display: none;
+    font-size: 1rem !important;
+}
+
+/*Contact section CSS*/
+
+.contact-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-title h2{
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.contact-title p{
+    font-size: 1rem !important;
+    text-align: center;
+    color: var(--heading-color);
+}
+
+.contact-section{
+    background-color: #f6f8fb !important;
+}
+
+.address{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.contact-left i{
+    font-size: 24px !important;
+    color: var(--btn-fg-color);
+}
+
+.contact-left h3{
+    font-size: 1.30rem !important;
+    font-weight: bold !important;
+}
+
+.address p, .contact-info p{
+    font-size: 1rem !important;
+    margin: 0;
+}
+
+.contact-info{
+    display: flex;
+}
+
+.email{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-right label{
+    font-weight: bold;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus{
+    outline: none !important;
+}
+
+.contact-right{
+    background-color: white !important;
+    border-radius: 10px !important;
+}
+
+.send-msg{
+    border: none;
+    color: #3b4ef8;
+}
+
+/*Footer section CSS*/
+
+.footer-section p{
+    text-align: center;
+    font-size: 1rem !important;
+    margin: 0;
+}
+
+.footer-section p i{
+    color: #3b4ef8;
+    font-size: 16px;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons a i,
+.social-icons a i:focus{
+    color: #3b4ef8;
+}
+
+.social-icons a i:hover,
+.social-icons a i:focus:hover{
+    color: #3b4ef8;
+}
+
+.social-icons span i{
+    padding: 0px 20px;
+    font-size: 28px;
+}
+
+/*Branches HTML file CSS*/
+download-notes-container{
+
+}
+
+/* .tech-branch-card{
+    justify-content: center;
+    align-items: center;
+    border: none !important;
+}
+
+.tech-branch-card a{
+    border: none;
+    color: #3b4ef8;
+}
+
+.upload-download,
+.upload-download:focus{
+    font-size: 14px;
+    padding: 5px 12px;
+    background: #e2e5fe;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.upload-download:hover,
+.upload-download:focus:hover{
+    color: white !important;
+    background: #3b4ef8;
+}
+
+.tech{
+    display: flex;
+} */
+
+/*Notes Upload Form*/
+#notes-container{
+    display: none;
+}
+
+.notes-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notes-image img{
+    max-width: 100%;
+}
+
+.my-form{
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+}
+
+.notes-form-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notes-form-items h3{
+    font-size: 2.20rem;
+    font-weight: 600;
+    font-family: 'Poppins';
+    color: #2d405f;
+}
+
+.notes-form-items label{
+    color: #2d405f;
+    font-weight: bold;
+}
+
+.username input,
+.user-email input{
+    width: 300px;
+    height: 40px;
+    border: 1.5px solid #2d405f;
+    border-radius: 5px;
+    padding: 0px 15px;
+    color: #1c1c1c;
+    font-weight: 600;
+}
+
+.notes-form-items input:not(#upload-btn):focus{
+    outline: #2d405f;
+}
+
+.attach-a-file input::file-selector-button {
+    height: 40px;
+    width: 125px;
+    border: none;
+    background: #4b61f8;
+    margin-top: 2.5px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+.attach-a-file input::file-selector-button:hover {
+    background: transparent;
+    border: 1.5px solid #4b61f8;
+    color: #4b61f8;
+}
+
+.attach-a-file{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.attach-a-file p,
+.upload-file p{
+    font-size: 13px !important;
+    font-weight: 600;
+}
+
+.username,
+.user-email,
+.select-subject{
+    display: flex;
+    flex-direction: column;
+}
+
+.select-subject select,
+.select-subject select:hover{
+    width: 300px;
+    height: 40px;
+    border: 1.5px solid #2d405f;
+    border-radius: 5px;
+    padding: 0px 15px;
+    font-weight: 600;
+}
+
+.select-subject select option{
+    background: #1f1f1f;
+    color: white;
+}
+
+/*Upload Notes Button CSS and Animation*/
+#upload-btn,
+#upload-btn:focus{
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: #3b4ef8;
+    color: white;
+    transition: all .15s cubic-bezier(0.67, 0.17, 0.40, 0.83);
+    text-align: center !important;
+    position: relative;
+    overflow: hidden;
+}
+
+#upload-btn-text{
+    font-size: 16px !important;
+    font-weight: bold !important;
+}
+
+.check-box{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    box-shadow: 0 0 12px -2px rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    right: -40px;
+    opacity: 0;
+}
+
+.check-box svg{
+    width: 20px;
+    margin: 10px;
+}
+
+svg path{
+    stroke-width: 3;
+    stroke: #fff;
+    stroke-dasharray: 34;
+    stroke-dashoffset: 34;
+    stroke-linecap: round;
+}
+
+.active{
+    background: #ff2b75;
+    transition: 1s;
+}
+
+.active .check-box{
+    right: 0;
+    opacity: 1;
+    transition: 1s;
+}
+
+.active p{
+    margin-right: 40px;
+    transition: 1s;
+}
+
+.active svg path{
+    stroke-dashoffset: 0;
+    transition: 1s;
+    transition-delay: 1s;
+}
+
+/*Download Notes CSS*/
+.download-notes-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.search-box input{
+    width: 90%;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: rgb(245, 245, 245);
+}
+
+.search-box input:focus{
+    outline: none;
+}
+
+.search-box i{
+    cursor: pointer;
+    font-size: 24px;
+    color: #3b4ef8;
+}
+
+.search-btn button{
+    width: 40%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    background-color: #3b4ef8;
+    color: #fff;
+}
+
+.notes-card-common{
+    background-color: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+}
+
+.hide-notes-cards{
+    display: none;
+}
+
+/*Convert Image to PDF file CSS*/
+#convert-image-section{
+    display: none;
+}
+
+.main-div1 h1{
+    font-size: 36px !important;
+    text-align: center;
+}
+
+#image-conversion-form input::file-selector-button{
+    height: 40px;
+    width: 125px;
+    border: none;
+    background: #4b61f8;
+    margin-top: 2.5px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+#image-conversion-form input::file-selector-button:hover{
+    background: transparent;
+    border: 1.5px solid #4b61f8;
+    color: #4b61f8;
+}
+
+#image-conversion-form button{
+    border: none;
+    color: #3b4ef8;
+}
+
+#conversion-btn-text{
+    font-size: 16px !important;
+    font-weight: 600;
+}

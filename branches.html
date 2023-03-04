@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branches</title>
+
+    <!--My Own CSS Links-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="responsive_style.css">
+
+    <!--Font awesome CDN Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+
+    <!--Unicons CDN Link-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--BootStrap CSS CDN Link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
+    <!--My Javascript Link -->
+    <!-- <script src="script.js" defer></script> -->
+
+    <!--BootStrap JS CDN Link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body onload="hidePreloader()">
+    <div id="css-loader">
+        <div class="lds-facebook">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <section id="branches">
+        <div class="branch-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12 mt-lg-5 mb-lg-5">
+                        <img src="notesearchingimage.png" alt="referesh the page" class="img-fluid pt-lg-5 pb-lg-4">
+                    </div>
+
+                    <div class="col-lg-6 col-12 mt-lg-4 mb-lg-4 download-notes-container">
+
+                        <div class="search-box d-flex justify-content-center mt-lg-5">
+                            <input type="search" name="search-bar" id="notes-searching-bar" class="mt-lg-5 mt-2 px-3 shadow" placeholder="Enter subject name..." maxlength="50">
+                        </div>
+
+                        <div class="search-btn mt-3 d-flex justify-content-center">
+                            <button id="clear-search-bar-btn" class="shadow mx-4" onclick="clearSearchingBar()">Clear search</button>
+
+                            <button id="notes-searching-btn" class="shadow mx-4">Search Now</button>
+                        </div>
+
+                        <div class="col-12 mt-3 mb-lg-3 d-flex flex-column justify-content-center align-items-center notes-card-common shadow" id="notes-containing-div">
+                            <h6 class="pt-3">Subject Name</h6>
+                            <p id="subject-name1">Subject name here</p>
+                            <a href="" class="pb-3" id="notes-downloading-link">Click here to download</a>
+                            <img src="" alt="Refresh the page" class="img-fluid" id="display-file">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script type="text/javascript" defer>
+    let notesSearchingBoxValue = document.getElementById("notes-searching-bar");
+
+    const clearSearchingBar = () => {//clearing the search bar
+        notesSearchingBoxValue.value = "";
+    }
+
+    //hiding preloader when main content is loaded
+    let myPreloader = document.getElementById("css-loader");
+    let wholeContent = document.getElementById("branches");
+    const hidePreloader = () => {
+        setTimeout(() => {
+            myPreloader.style.display = "none";
+            wholeContent.style.display = "block";
+        }, 1500);
+    }
+
+    // document.getElementById("notes-searching-btn").addEventListener('click', async ()=>{
+    //     let res = await fetch("gs://noteswebsite-912f7.appspot.com");
+    //     console.log(res);
+    // });
+</script>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+    import { getStorage, ref, getDownloadURL} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAOJN6FZDuUdODZ9V8WVmYgYd_wZr3mn70",
+        authDomain: "noteswebsite-912f7.firebaseapp.com",
+        projectId: "noteswebsite-912f7",
+        storageBucket: "noteswebsite-912f7.appspot.com",
+        messagingSenderId: "200155072034",
+        appId: "1:200155072034:web:faa98f0e43a5f4e1802c7b"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const storage = getStorage(app);
+
+    function downloadFile(fileURL, fileName){
+        fetch(fileURL, {method: 'get'}).then(res => res.blob()).then(res => {
+            document.getElementById("notes-downloading-link").setAttribute("download", fileName);
+            const href = URL.createObjectURL(res);
+            document.getElementById("notes-downloading-link").setAttribute("href", href);
+            document.getElementById("notes-downloading-link").click();
+            // URL.revokeObjectURL(href);
+        });
+    };
+
+    let fileURL = "";
+
+    const fileURLs = ['gs://noteswebsite-912f7.appspot.com/Anshul-Thermodynamics', 'gs://noteswebsite-912f7.appspot.com/Budhimaan-Mechanics', 'gs://noteswebsite-912f7.appspot.com/Budhimaan-Power Eletronics', 'gs://noteswebsite-912f7.appspot.com/VERY-Embedded Systems'];
+
+    document.getElementById("notes-searching-btn").addEventListener('click', () => {
+
+        let searchBarKeyword = document.getElementById("notes-searching-bar").value;
+        searchBarKeyword = searchBarKeyword.toLowerCase();
+        let targetURL = '';
+
+        if(searchBarKeyword.length != 0 && searchBarKeyword.includes('thermodynamics')){
+            const resURLs = fileURLs.filter((item)=>{
+                return (item.includes('Thermodynamics'));
+            });
+            targetURL = resURLs[0];
+
+            const fileReference = ref(storage, targetURL);
+            getDownloadURL(fileReference).then((url) => {
+                fileURL = url;
+                const xhr = new XMLHttpRequest();
+                xhr.responseType = 'blob';
+
+                xhr.onload = (event) => {
+                    const blob = xhr.response;
+                };
+                xhr.open('GET', fileURL);
+                xhr.send();
+
+                downloadFile(fileURL, 'Anshul Vats File');
+                console.log("File downloaded successfully !");
+            }).catch((error) => {
+            console.log("Try Again !");
+        });
+    }
+    else{
+        console.log("File not found !");
+    }
+});
+</script>
+</body>
+</html>

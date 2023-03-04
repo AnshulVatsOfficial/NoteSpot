@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteSpot</title>
+
+    <!--My Own CSS Links-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="responsive_style.css">
+
+    <!--My JS File-->
+    <script src="script.js" defer></script>
+
+    <!--Font Awesome Link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+    
+    <!--Unicons CDN Link-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--BootStrap CSS CDN Link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
+    <!--BootStrap JS CDN Link-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body onload="hidePreloader()">
+  <!--Website Loading Animation-->
+  <div id="css-loader">
+    <div class="lds-facebook">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+  </div>
+
+  <!--Header Section-->
+    <header class="header loading-content">
+        <nav class="navbar navbar-expand-lg bg-light my_navbar">
+            <div class="container-fluid nav_container">
+              <a class="navbar-brand my_logo" href="index.html">NoteSpot</a>
+              <button id="nav-toggler-btn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i id="nav_toggler_icon" class="fa-solid fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse pos_right" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#home">Home</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                  </li> -->
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                  </li> -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#team">Team</a>
+                  </li> -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="#pricing">Pricing</a>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="#faq">FAQs</a>
+                  </li> -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                </ul>             
+                  <a class="mb-lg-0 mb-5 get-started-btn" id="login-button">Login Now</a>
+                  <!-- <a class="mb-lg-0 mb-5 get-started-btn" id="signout-button">Sign out</a> -->
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <!--Home Section-->
+    <section id="home" class="loading-content">
+      <div class="container-fluid home-image px-0 mt-0">
+        <div class="container">
+          <div class="row">
+            <div class="home-items justify-content-center">
+              <h1>Missed your important lecture?</h1>
+              <p class="pt-2">We provide you a space to share notes with your peers, instantly</p>
+              <div class="download-buttons col-lg-6 justify-content-center">
+                <a class="mt-2 mx-3 mb-lg-0 mb-2 get-started-btn" id="upload-notes-btn" href="notesContainer.html">Upload Notes <i class="fa-solid fa-circle-arrow-up"></i></a>
+                <a class="mt-2 mx-3 mb-lg-0 mb-2 get-started-btn" id="download-notes-btn" href="branches.html">Download Notes <i class="fa-solid fa-circle-arrow-down"></i></a>
+              </div>
+              <div class="convert-image-div d-flex col-lg-6 justify-content-center align-items-center">
+                <p class="pt-5" id="convert-img-text">Don't have a PDF?<br>Convert your Image in PDF and upload seamlessly</p>
+                <a class="mb-lg-0 get-started-btn" id="convert-img-btn" href="imageconverter.html">Convert Image to PDF &nbsp; <i class="fa-solid fa-file-image"></i></a>
+              </div>
+            </div>
+            <div class="home-banner mt-5 mb-5">
+              <img src="hero-img.png" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--About Section-->
+    <!-- <section id="about">
+      <div class="about-section pt-5 pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="about-left col-lg-5 col-md-12 col-sm-12 mt-5 mb-5">
+              <h2 class="pb-4">Take Notes like never before</h2>
+              <p class="pb-4">We provide one stop solution to share notes without having chances of loosing them.<br>Click on "About us" to to get started</p>
+              <a href="#about">About us &nbsp; <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="about-right col-lg-7 col-md-12 col-sm-12 mt-5">
+              <div class="about-right-one">
+                <div class="right-div">
+                  <i class="fa-solid fa-note-sticky pb-3"></i>
+                  <h3>Keep your Notes safe</h3>
+                  <p class="pb-sm-3">Your notes will be safe under your own profile and can't be accessed by anyone</p>
+                </div>
+                <div class="right-div">
+                  <i class="fa-brands fa-unity pb-3"></i>
+                  <h3>One tap share</h3>
+                  <p class="pb-sm-3"></p>
+                </div>
+              </div>
+              <div class="about-right-two">
+                <div class="right-div">
+                  <i class="fa-solid fa-image pb-3"></i>
+                  <h3>Labore consequatur</h3>
+                  <p class="pb-sm-3">Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                </div>
+                <div class="right-div">
+                  <i class="fa-solid fa-shield pb-3"></i>
+                  <h3>Beatae veritatis</h3>
+                  <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!--Tracking Count of Files-->
+    <section id="client" class="loading-content">
+      <div class="client-section">
+        <div class="container">
+          <div class="row d-flex flex-row justify-content-center align-items-center">
+            <div class="clients col-lg-4 col-md-4 col-12">
+              <h5 class="pt-4">Files Uploaded <i class="fa-solid fa-circle-chevron-down"></i></h5>
+              <p><span id="uploadedFilesCount"></span>+</p>
+            </div>
+
+            <div class="clients col-lg-4 col-md-4 col-12">
+              <h5 class="pt-4">Files Downloaded <i class="fa-solid fa-circle-chevron-up"></i></h5>
+              <p><span id="downloadedFilesCount"></span>+</p>
+            </div>
+
+            <div class="clients col-lg-4 col-md-4 col-12">
+              <h5 class="pt-4">Files Converted <i class="fa-solid fa-right-left"></i></h5>
+              <p><span id="convertedFilesCount"></span>+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--Features section-->
+    <!-- <section id="features">
+      <div class="feature-section pt-3 pb-3">
+        <div class="container">
+          <div class="feature-title pb-4">
+            <h2>Features</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          </div>
+
+          <div class="row pb-5">
+            <div class="f-img1 col-lg-5 col-md-5 col-12 pb-sm-3 pb-4">
+              <img src="features-1.png" class="img-fluid">
+            </div>
+            <div class="f-text1 col-lg-7 col-md-7 col-12 f-common">
+              <h2 class="pt-4">Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h2>
+              <p class="pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              
+              <p><i class="fa-solid fa-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p><i class="fa-solid fa-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+              <p><i class="fa-solid fa-check"></i> Ullam est qui quos consequatur eos accusamus.</p>
+            </div>
+          </div>
+
+          <div class="row pb-5 dir-rev">
+            <div class="f-text1 col-lg-7 col-md-7 col-12 f-common">
+              <h2 class="pt-4">Corporis temporibus maiores provident</h2>
+              <p class="pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              
+              <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+            <div class="f-img1 col-lg-5 col-md-5 col-12 pb-sm-3 pb-4">
+              <img src="features-2.png" class="img-fluid">
+            </div>
+          </div>
+
+          <div class="row pb-5">
+            <div class="f-img1 col-lg-5 col-md-5 col-12 pb-sm-3 pb-4">
+              <img src="features-3.png" class="img-fluid">
+            </div>
+            <div class="f-text1 col-lg-7 col-md-7 col-12 f-common">
+              <h2 class="pt-4">Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h2>
+              <p class="pt-2">Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
+              
+              <p><i class="fa-solid fa-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p><i class="fa-solid fa-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+              <p><i class="fa-solid fa-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</p>
+            </div>
+          </div>
+
+          <div class="row pb-5 dir-rev">
+            <div class="f-text1 col-lg-7 col-md-7 col-12 f-common">
+              <h2 class="pt-4">Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h2>
+              <p class="pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              
+              <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+            <div class="f-img1 col-lg-5 col-md-5 col-12 pb-sm-3 pb-4">
+              <img src="features-4.png" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!--Steps Section-->
+    <!-- <section id="steps">
+      <div class="steps-section pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 s-common border-rht border-btm pt-3 pb-3">
+              <span>01</span>
+              <h3 class="pt-4">Lorem Ipsum</h3>
+              <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 s-common border-rht border-btm pt-3 pb-3">
+              <span>02</span>
+              <h3 class="pt-4">Repellat Nihil</h3>
+              <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 s-common border-btm pt-3 pb-3">
+              <span>03</span>
+              <h3 class="pt-4">Ad ad velit qui</h3>
+              <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 s-common border-rht pt-3">
+              <span>04</span>
+              <h3 class="pt-4">Repellendus molestiae</h3>
+              <p>Inventore quo sint a sint rerum. Distinctio blanditiis deserunt quod soluta quod nam mider lando casa</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 s-common border-rht pt-3">
+              <span>05</span>
+              <h3 class="pt-4">Sapiente Magnam</h3>
+              <p>Vitae dolorem in deleniti ipsum omnis tempore voluptatem. Qui possimus est repellendus est quibusdam</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 s-common pt-3">
+              <span>06</span>
+              <h3 class="pt-4">Facilis Impedit</h3>
+              <p>Quis eum numquam veniam ea voluptatibus voluptas. Excepturi aut nostrum repudiandae voluptatibus corporis sequi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="services" class="loading-content">
+      <div class="services-section pt-3 pb-3">
+        <div class="container">
+          <div class="services-title pb-4 mt-5">
+            <h2>Services</h2>
+            <p>Your one-stop-shop for efficient note sharing and collaboration</p>
+          </div>
+
+          <div class="row services-cards">
+            <div class="col-lg-3 col-md-6 col-12 card-common pb-5">
+              <div class="card my-cards">
+                <i class="fa-solid fa-basketball mt-5"></i>
+                <div class="card-body common-body">
+                  <a href="#" class="card-title">Instant Sharing</a>
+                  <p class="card-text pb-5">We facilitate instant sharing of your notes</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-12 card-common pb-5">
+              <div class="card my-cards">
+                <i class="fa-solid fa-note-sticky mt-5"></i>
+                <div class="card-body common-body">
+                  <a href="#" class="card-title">Easy Download</a>
+                  <p class="card-text pb-5">All notes are just one click away from you</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-12 card-common pb-5">
+              <div class="card my-cards">
+                <i class="fa-solid fa-gauge-high mt-5"></i>
+                <div class="card-body common-body">
+                  <a href="#" class="card-title">Fast Searching</a>
+                  <p class="card-text pb-5">We provide fast search for every notes</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-12 card-common pb-5">
+              <div class="card my-cards">
+                <i class="fa-solid fa-layer-group mt-5"></i>
+                <div class="card-body common-body">
+                  <a href="#" class="card-title">Quality Notes</a>
+                  <p class="card-text pb-5">We believe in providing quality for all</p>
+                </div>
+              </div>
+            </div>     
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Team section-->
+    <!-- <section id="team">
+      <div class="team-section pt-3 pb-3">
+        <div class="container">
+          <div class="team-title pb-4 mt-5">
+            <h2>Team</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          </div>
+
+          <div class="row team-card-cont">
+            <div class="col-lg-3 col-md-6 col-12 team-common pb-5">
+              <div class="card team-cards shadow">
+                <img src="team-1.jpg" class="img-fluid">
+              </div>
+              <h3>Walter White</h3>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12 team-common pb-5">
+              <div class="card team-cards shadow">
+                <img src="team-2.jpg" class="img-fluid">
+              </div>
+              <h3>Sarah Johnson</h3>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12 team-common pb-5">
+              <div class="card team-cards shadow">
+                <img src="team-3.jpg" class="img-fluid">
+              </div>
+              <h3>William Anderson</h3>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12 team-common pb-5">
+              <div class="card team-cards shadow"> 
+                <img src="team-4.jpg" class="img-fluid">
+              </div>
+              <h3>Amanda Jepson</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!--Pricing section-->
+    <section id="pricing" class="loading-content">
+      <div class="pricing-section pt-3 pb-3">
+        <div class="container">
+          <div class="pricing-title pb-5">
+              <h2>Pricing</h2>
+              <p>Quality note-sharing, at a price you can afford</p>
+          </div>
+
+          <div class="row pricing-row">
+            <div class="col-lg-4 col-12 pb-5">
+              <div class="card pricing-cards shadow">
+                <div class="card-body common-body">
+                  <h3 class="pt-5">FREE</h3>
+                  <span class="price-tag pb-3">$0<span class="time-duration"> /month</span></span>
+                  <p>Notes downloading</p>
+                  <p>Upload 5 notes/day</p>
+                  <!-- <p><del>Notes uploading</del></p> -->
+                  <!-- <p><del>Pharetra messa</del></p>
+                  <p><del>Massa ultricies mi</del></p> -->
+                  <a href="#" class="price-btn get-started-btn mb-5">Buy Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-12 pb-5">
+              <div class="card pricing-cards shadow">
+                <div class="card-body common-body">
+                  <h3 class="pt-5">PERSONAL</h3>
+                  <span class="price-tag pb-3">$2<span class="time-duration"> /month</span></span>
+                  <p>Notes downloading</p>
+                  <p>Upload 50 notes/day</p>
+                  <!-- <p></p> -->
+                  <!-- <p>Pharetra messa</p>
+                  <p><del>Massa ultricies mi</del></p> -->
+                  <a href="#" class="price-btn get-started-btn mb-5">Buy Now</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-12 pb-5">
+              <div class="card pricing-cards shadow">
+                <div class="card-body common-body">
+                  <h3 class="pt-5">COMMUNITY</h3>
+                  <span class="price-tag pb-3">$5<span class="time-duration"> /month</span></span>
+                  <p>Notes downloading</p>
+                  <p>upload 100 notes/day</p>
+                  <!-- <p>Unlimited uploading</p> -->
+                  <!-- <p>Pharetra messa</p>
+                  <p>Massa ultricies mi</p> -->
+                  <a href="#" class="price-btn get-started-btn mb-5">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!--FAQ section-->
+    <!-- <section id="faq">
+      <div class="faq-section pt-3 pb-3">
+        <div class="container">
+          <div class="faq-title pb-5">
+            <h2>Frequently Asked Questions</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          </div>
+          <div class="row">
+            <p id="ques1" class="ques"><i class="fa-solid fa-circle-question ques-icon"></i> &nbsp; Non consectetur a erat nam at lectus urna duis?</p>
+            <p id="ans1" class="ans pb-2">Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+
+            <p id="ques2" class="ques"><i class="fa-solid fa-circle-question ques-icon"></i> &nbsp; Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</p>
+            <p id="ans2" class="ans pb-2">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+
+            <p id="ques3" class="ques"><i class="fa-solid fa-circle-question ques-icon"></i> &nbsp; Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</p>
+            <p id="ans3" class="ans pb-2">Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
+
+            <p id="ques4" class="ques"><i class="fa-solid fa-circle-question ques-icon"></i> &nbsp; Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</p>
+            <p id="ans4" class="ans pb-2">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+
+            <p id="ques5" class="ques"><i class="fa-solid fa-circle-question ques-icon"></i> &nbsp; Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</p>
+            <p id="ans5" class="ans pb-2">Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+
+            <p id="ques6" class="ques"><i class="fa-solid fa-circle-question ques-icon"></i> &nbsp; Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor?</p>
+            <p id="ans6" class="ans pb-2">Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.</p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!--Contact section-->
+    <section id="contact" class="loading-content">
+      <div class="contact-section pb-5">
+        <div class="container">
+          <div class="contact-title pb-3">
+            <h2>Contact</h2>
+            <p>Questions or feedback? We're here to help</p>
+          </div>
+
+          <div class="row">
+            <div class="contact-left col-lg-6 col-md-6 col-12">
+              <div class="address col-md-12">
+                <i class="fa-solid fa-location-dot pt-4 pb-3"></i>
+                <h3>Our Address</h3>
+                <p class="pb-3">300/1 Om Nagar, Meerut, India 250001</p>
+              </div>
+
+              <div class="contact-info pt-4 col-md-12">
+                <div class="email col-md-6 col-sm-6 col-6">
+                  <div class="contact-details"> 
+                    <i class="fa-solid fa-envelope pt-4 pb-3"></i>
+                    <h3>Email Us</h3>
+                    <p>avanshul0001@gmail.com</p>
+                    <p class="pb-4">avanshul98@gmail.com</p>
+                  </div>   
+                </div>
+                <div class="phone col-md-6 col-sm-6 col-6">
+                  <div class="contact-details">
+                    <i class="fa-solid fa-phone-volume pt-4 pb-3"></i>
+                    <h3>Call Us</h3>
+                    <p>+91 70606 62386</p>
+                    <p class="pb-4">+91 95628 51762</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-right col-lg-6 col-md-6 col-12 shadow mt-lg-0 mt-md-0 mt-sm-5 mt-5 pt-3 pb-3">
+              <form class="mt-3 mb-3" action="https://formsubmit.co/el/jelija" method="POST">  
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Your Name</label>
+                  <input type="text" name="Name" class="form-control" id="name" aria-describedby="emailHelp" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Your Email</label>
+                  <input type="email" name="Email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Your Message</label>
+                  <textarea name="Message" class="form-control" id="message" required></textarea>
+                </div>
+
+                <input type="submit" value="Send Message" class="send-msg get-started-btn" id="contact-details-btn"/>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer section-->
+    <section id="footer" class="loading-content">
+      <div class="footer-section">
+        <div class="container">
+          <div class="row">
+            <div class="social-icons mt-5 mb-3">
+              <span><a href="https://www.linkedin.com/in/anshul-vats-09644b191/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></span>
+              <span><a href="https://twitter.com/BudhimaanInsaan" target="_blank"><i class="fa-brands fa-square-twitter"></i></a></span>
+              <span><a href="#"><i class="fa-brands fa-square-instagram"></i></a></span>
+              <span><a href="#"><i class="fa-brands fa-square-facebook"></i></a></span>
+              <span><a href="#"><i class="fa-brands fa-youtube"></i></a></span>
+            </div>   
+            <p class="mt-2"><i class="fa-solid fa-copyright"></i> Copyright. All Rights Reserved</p>
+            <p class="mt-2 pb-5">Designed By:<a href="#home"> Anshul Vats</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+
+<!--User Authentication-->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, signOut, setPersistence, browserSessionPersistence } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyAOJN6FZDuUdODZ9V8WVmYgYd_wZr3mn70",
+    authDomain: "noteswebsite-912f7.firebaseapp.com",
+    projectId: "noteswebsite-912f7",
+    storageBucket: "noteswebsite-912f7.appspot.com",
+    messagingSenderId: "200155072034",
+    appId: "1:200155072034:web:faa98f0e43a5f4e1802c7b"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider(app);
+  provider.setCustomParameters({//to get all the gmail accounts everytime a user clicks on login button
+    prompt: "select_account"
+  });
+
+let user = null;
+let isLoggedIn = false;
+
+let myLoginBtn = document.getElementById("login-button");
+let mySignoutBtn = document.getElementById("signout-button");
+let uploadNotesBtn = document.getElementById("upload-notes-btn");
+let downloadNotesBtn = document.getElementById("download-notes-btn");
+let convertImageBtn = document.getElementById("convert-img-btn");
+let convertImageText = document.getElementById("convert-img-text");
+
+//to persist the state of login and logout
+if(localStorage.getItem("isUserLoggedIn") == "false"){
+    uploadNotesBtn.style.display = 'none';
+    downloadNotesBtn.style.display = 'none';
+    convertImageBtn.style.display = 'none';
+    convertImageText.style.display = 'none';
+}
+else{
+    myLoginBtn.innerText = 'Signout';
+    uploadNotesBtn.style.display = 'block';
+    downloadNotesBtn.style.display = 'block';
+    convertImageBtn.style.display = 'block';
+    convertImageText.style.display = 'block';
+}
+
+myLoginBtn.addEventListener('click', (e)=>{
+    if(localStorage.getItem("isUserLoggedIn") == "false"){
+      signInWithPopup(auth, provider).then((result) => {
+      console.log("You've logged in successfully !"); 
+      uploadNotesBtn.style.display = 'block';
+      downloadNotesBtn.style.display = 'block';
+      convertImageBtn.style.display = 'block';
+      convertImageText.style.display = 'block';
+      myLoginBtn.innerText = 'Signout';
+      localStorage.setItem("isUserLoggedIn", true);
+
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      user = result.user;
+  }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+    });
+  }
+
+    else{
+      signOut(auth).then(() => {
+        console.log("You've signed out successfully !");
+        localStorage.setItem("isUserLoggedIn", false);
+        myLoginBtn.innerHTML = 'Login Now';
+        uploadNotesBtn.style.display = 'none';
+        downloadNotesBtn.style.display = 'none';
+        convertImageBtn.style.display = 'none';
+        convertImageText.style.display = 'none';
+      }).catch((error) => {
+    });
+  }
+});
+</script>
+
+<!--Contact-->
+<script type="text/javascript" defer>
+  //hiding preloader when main content is loaded
+  let myPreloader = document.getElementById("css-loader");
+  let wholeContent = document.querySelectorAll(".loading-content");
+    const hidePreloader = () => {
+        setTimeout(() => {
+            myPreloader.style.display = "none";
+            wholeContent.forEach((item)=>{
+              item.style.display = "block";
+            });
+        }, 1500);
+    }
+  // let downloadedFilesCount = localStorage.getItem("");
+  // let convertedFilesCount = localStorage.getItem("");
+
+  document.addEventListener('DOMContentLoaded', ()=>{
+    function runCounters(id, startNum, endNum, timeDuration){
+        let obj = document.getElementById(id),
+            currentNum = startNum,//0
+            range = (endNum - startNum),//1000
+            increment = endNum > startNum ? 1 : -1,//true
+            steps = Math.floor(timeDuration / range),//3
+            timer = setInterval(() => {
+                currentNum = currentNum + increment;
+                obj.innerHTML = currentNum;
+                if(currentNum == endNum){
+                    clearInterval(timer);
+                }
+            }, steps);
+        }
+        runCounters("uploadedFilesCount", 0, 500, 5000);
+        runCounters("downloadedFilesCount", 0, 250, 5000);
+        runCounters("convertedFilesCount", 0, 1000, 5000);
+});
+
+  let contactBtn = document.getElementById("contact-details-btn");
+  contactBtn.addEventListener('click', (e)=>{
+    let userName = document.getElementById("name").value;
+    let userEmail = document.getElementById("email").value;
+    let userMessage = document.getElementById("message").value;
+
+    if(userName.length != 0 && userEmail.length != 0 && userMessage.length != 0){
+      Email.send({
+      SecureToken: "a3d0e75c-a9cb-46ba-9f9a-7c669d19eb81",
+      To: "avanshul0001@gmail.com",
+      From: userEmail,
+      Subject: '',
+      Body: userMessage
+    }).then(message => alert('Your email was sent successfully !'));
+  }
+});
+</script>
+</html>
